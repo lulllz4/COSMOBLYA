@@ -389,3 +389,7 @@ progress::-moz-progress-bar { background: var(--accent); border-radius: 5px; }
     transition: none !important;
   }
 }
+
+.planet-description {
+  margin-top: 20px;
+}
