@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d16">
+  <title>Экипаж — AURORA</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body data-page="crew">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="header container">
+    <a class="logo" href="index.html" aria-label="AURORA — главная">
+      <span class="logo-symbol" aria-hidden="true">✳</span>
+      AURORA<span class="logo-small">/ EXPEDITION 07</span>
+    </a>
+
+    <nav aria-label="Основная навигация">
+      <a href="index.html">Корабль</a>
+      <a href="index.html#route">Маршрут</a>
+      <a href="crew.html" aria-current="page">Экипаж ↗</a>
+    </nav>
+  </header>
+
+  <main id="main" class="container crew-page">
+    <a class="back-link" href="index.html">← На борт корабля</a>
+
+    <div class="crew-heading">
+      <p class="eyebrow">Личный состав / доступ разрешён</p>
+      <h1>Те, кто<br><span>держит курс.</span></h1>
+      <p class="lead">
+        У каждого — своя роль, своё прошлое и причина
+        отправиться к далёким звёздам.
+      </p>
+    </div>
+
+    <div
+      id="crew-tabs"
+      class="crew-tabs"
+      role="tablist"
+      aria-label="Члены экипажа"
+    ></div>
+
+    <div id="crew-panels"></div>
+
+    <noscript>
+      <p>Для отображения досье включи JavaScript.</p>
+    </noscript>
+  </main>
+
+  <footer class="footer container">
+    <span>AURORA / Архив экипажа</span>
+    <span>Люди — главный ресурс экспедиции</span>
+  </footer>
+</body>
+</html>
