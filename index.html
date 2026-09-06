@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d16">
+  <title>AURORA — корабль и экспедиция</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body data-page="ship">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="header container">
+    <a class="logo" href="index.html" aria-label="AURORA — главная">
+      <span class="logo-symbol" aria-hidden="true">✳</span>
+      AURORA<span class="logo-small">/ EXPEDITION 07</span>
+    </a>
+
+    <nav aria-label="Основная навигация">
+      <a href="index.html" aria-current="page">Корабль</a>
+      <a href="#route">Маршрут</a>
+      <a href="crew.html">Экипаж ↗</a>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Бортовая сеть · сектор Ориона</p>
+        <h1 id="hero-title">За пределами<br><span>известного.</span></h1>
+        <p class="lead">
+          Исследовательский корабль AURORA.
+          Три члена экипажа, неизведанные миры и маршрут,
+          который ещё предстоит написать.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#route">
+            Открыть маршрут <span aria-hidden="true">↗</span>
+          </a>
+          <span class="status"><i aria-hidden="true"></i> Системы в норме</span>
+        </div>
+      </div>
+
+      <div class="ship-visual">
+        <div class="visual-top">
+          <span>AV–07 / AURORA</span>
+          <span>ОБЗОР КОРПУСА</span>
+        </div>
+
+        <div class="radar-ring ring-one" aria-hidden="true"></div>
+        <div class="radar-ring ring-two" aria-hidden="true"></div>
+
+        <svg
+          class="ship-svg"
+          viewBox="0 0 640 380"
+          role="img"
+          aria-labelledby="ship-image-title"
+        >
+          <title id="ship-image-title">
+            Схематическое изображение исследовательского корабля AURORA
+          </title>
+
+          <defs>
+            <linearGradient id="hull" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#d9edf4"/>
+              <stop offset="45%" stop-color="#668193"/>
+              <stop offset="100%" stop-color="#182a3e"/>
+            </linearGradient>
+
+            <linearGradient id="wing" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#456377"/>
+              <stop offset="100%" stop-color="#111e30"/>
+            </linearGradient>
+
+            <linearGradient id="exhaust" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#6fffe0" stop-opacity="0"/>
+              <stop offset="100%" stop-color="#6fffe0"/>
+            </linearGradient>
+          </defs>
+
+          <g transform="rotate(-12 320 190)">
+            <path d="M35 172 L213 175 L213 205 L35 207 Z"
+                  fill="url(#exhaust)" opacity=".7"/>
+
+            <path d="M225 165 L290 58 L352 62 L330 175 Z"
+                  fill="url(#wing)" stroke="#7593a7"/>
+            <path d="M225 215 L290 322 L352 318 L330 205 Z"
+                  fill="url(#wing)" stroke="#7593a7"/>
+
+            <path d="M198 165 L381 142 L548 190 L381 238 L198 215 Z"
+                  fill="url(#hull)" stroke="#a0b9c9"/>
+
+            <path d="M381 142 L548 190 L359 190 Z"
+                  fill="#afc8d5" opacity=".4"/>
+            <path d="M198 190 L548 190"
+                  stroke="#d1e9f2" stroke-opacity=".6"/>
+
+            <path d="M389 160 L448 176 L420 183 L374 174 Z"
+                  fill="#79ffe1"/>
+
+            <path d="M220 170 L220 210" stroke="#81ffe6" stroke-width="7"/>
+            <path d="M244 172 L310 164 M244 208 L310 216"
+                  stroke="#0b1b2b" stroke-width="5"/>
+
+            <circle cx="338" cy="191" r="13"
+                    fill="#162b3e" stroke="#8baab9"/>
+            <circle cx="338" cy="191" r="5" fill="#7bffe3"/>
+          </g>
+        </svg>
+
+        <div class="visual-bottom">
+          <span><i class="tiny-dot" aria-hidden="true"></i> ДВИГАТЕЛЬ АКТИВЕН</span>
+          <span>КЛАСС: EXPLORER IV</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="ship-grid" aria-label="Информация о корабле">
+      <article class="panel ship-description">
+        <p class="eyebrow">01 / Технический паспорт</p>
+        <div class="section-title">
+          <h2>Исследовательский крейсер</h2>
+          <span class="badge">AV–07</span>
+        </div>
+
+        <p class="muted">
+          AURORA создана для автономных экспедиций за пределами
+          картографированных систем. Усиленный корпус защищает
+          экипаж от космической радиации, а замкнутая экосистема
+          позволяет годами не возвращаться на станцию.
+        </p>
+
+        <dl class="specs">
+          <div><dt>Длина</dt><dd>128 м</dd></div>
+          <div><dt>Автономность</dt><dd>36 месяцев</dd></div>
+          <div><dt>Экипаж</dt><dd id="crew-count">—</dd></div>
+          <div><dt>Бортовой ИИ</dt><dd>ЭХО / v.9.4</dd></div>
+        </dl>
+
+        <div class="ship-systems">
+          <details open>
+            <summary>01 — Энергетическое ядро</summary>
+            <p>
+              Двухконтурный термоядерный реактор обеспечивает питание
+              двигателей, щитов и систем жизнеобеспечения.
+            </p>
+          </details>
+          <details>
+            <summary>02 — Навигационный мостик</summary>
+            <p>
+              Звёздная картография, дальнее сканирование и расчёт
+              прыжков. Решения подтверждаются капитаном и бортовым ИИ.
+            </p>
+          </details>
+          <details>
+            <summary>03 — Жилой и научный модули</summary>
+            <p>
+              Индивидуальные каюты, лаборатория, медицинский отсек
+              и оранжерея с системой регенерации кислорода.
+            </p>
+          </details>
+        </div>
+      </article>
+
+      <article class="panel">
+        <p class="eyebrow">02 / Телеметрия</p>
+        <div class="section-title">
+          <h2>Ресурсы и состояние</h2>
+          <span class="status"><i aria-hidden="true"></i> Стабильно</span>
+        </div>
+
+        <div class="resources">
+          <div class="resource">
+            <div><label for="energy">Энергия реактора</label><span>84%</span></div>
+            <progress id="energy" max="100" value="84">84%</progress>
+          </div>
+          <div class="resource resource-amber">
+            <div><label for="fuel">Прыжковое топливо</label><span>68%</span></div>
+            <progress id="fuel" max="100" value="68">68%</progress>
+          </div>
+          <div class="resource">
+            <div><label for="oxygen">Кислород</label><span>92%</span></div>
+            <progress id="oxygen" max="100" value="92">92%</progress>
+          </div>
+          <div class="resource">
+            <div><label for="hull-state">Целостность корпуса</label><span>96%</span></div>
+            <progress id="hull-state" max="100" value="96">96%</progress>
+          </div>
+        </div>
+
+        <div class="system-note">
+          <span class="eyebrow">Последняя диагностика</span>
+          <p>
+            Критических повреждений нет. Рекомендована проверка
+            внешней обшивки после следующей посадки.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section id="route" class="route-section" aria-labelledby="route-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">03 / Звёздная карта</p>
+          <h2 id="route-title">Маршрут экспедиции</h2>
+        </div>
+        <span id="route-count" class="badge"></span>
+      </div>
+
+      <p class="muted">
+        Новые координаты открываются по мере исследования.
+        Закрытые миры пока недоступны для высадки.
+      </p>
+
+      <div id="planet-list" class="planet-list" aria-label="Планеты маршрута"></div>
+      <article id="planet-detail" class="panel planet-detail" aria-live="polite"></article>
+
+      <noscript>
+        <p>Для отображения интерактивной карты включи JavaScript.</p>
+      </noscript>
+    </section>
+
+    <section class="panel crew-banner" aria-labelledby="crew-banner-title">
+      <div>
+        <p class="eyebrow">04 / Личный состав</p>
+        <h2 id="crew-banner-title">За каждым курсом — чья-то история.</h2>
+        <p class="muted">
+          Познакомься с теми, кто называет AURORA своим домом.
+        </p>
+      </div>
+      <a class="button button-primary" href="crew.html">Открыть досье экипажа ↗</a>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <span>AURORA / Бортовой архив</span>
+    <span>Связь с Землёй: задержка 14 минут</span>
+  </footer>
+</body>
+</html>
